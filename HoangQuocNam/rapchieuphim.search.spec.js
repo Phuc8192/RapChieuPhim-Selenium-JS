@@ -3,10 +3,10 @@ const { Builder, By, Key } = require("selenium-webdriver");
 const chai = require('chai');
 const should = chai.should();
 
+let driver;
+
 // Hàm kiểm tra trường UserName
 async function fieldSearch(testcase, expect) {
-  // Khởi tạo một cửa sổ chrome mới
-  let driver = await new Builder().forBrowser('chrome').build();
   // Mở trang RapChieuPhim
   await driver.get('https://rapchieuphim.com');
   // Điền từ kháo vào trong trường search
@@ -22,6 +22,12 @@ async function fieldSearch(testcase, expect) {
 }
 
 describe('Kiểm tra search', async function () {
+
+  before(async function() {
+    driver = await new Builder().forBrowser('chrome').build();
+  });
+  after(async () => await driver.quit());
+
   it('Không tìm kiếm ký tự đặc biệt', async () => fieldSearch("ln!mik", "Không tìm được kết quả"));
   it('Nhập ICON', async () => fieldSearch("🙂", "Không tìm được kết quả"));
   it('Nhập đoạn CODE', async () => fieldSearch("echo 'nam'", "Không tìm được kết quả"));

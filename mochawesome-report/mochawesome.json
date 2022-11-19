@@ -2,14 +2,14 @@
   "stats": {
     "suites": 1,
     "tests": 1,
-    "passes": 1,
+    "passes": 0,
     "pending": 0,
-    "failures": 0,
-    "start": "2022-11-19T11:19:49.123Z",
-    "end": "2022-11-19T11:20:31.822Z",
-    "duration": 42699,
+    "failures": 1,
+    "start": "2022-11-19T14:44:17.843Z",
+    "end": "2022-11-19T14:44:54.162Z",
+    "duration": 36319,
     "testsRegistered": 1,
-    "passPercent": 100,
+    "passPercent": 0,
     "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
@@ -18,25 +18,25 @@
   },
   "results": [
     {
-      "uuid": "2fb7b16d-0d67-410f-af99-11265712a399",
+      "uuid": "126b8e4a-e43e-4d16-936a-f0fb51be54e9",
       "title": "",
-      "fullFile": "C:\\Users\\PETER\\Documents\\GitHub\\Rapchieuphim-Selenium-JS\\PhamNgocAn\\rapchieuphim.comment.spec.js",
-      "file": "\\PhamNgocAn\\rapchieuphim.comment.spec.js",
+      "fullFile": "D:\\Rapchieuphim-Selenium-JS\\HoangQuocNam\\rapchieuphim.search.spec.js",
+      "file": "\\HoangQuocNam\\rapchieuphim.search.spec.js",
       "beforeHooks": [],
       "afterHooks": [],
       "tests": [],
       "suites": [
         {
-          "uuid": "3f49d3d1-5c13-4103-9a9c-7f64051b4f2f",
-          "title": "Kiểm tra trường nội dung bình luận",
-          "fullFile": "C:\\Users\\PETER\\Documents\\GitHub\\Rapchieuphim-Selenium-JS\\PhamNgocAn\\rapchieuphim.comment.spec.js",
-          "file": "\\PhamNgocAn\\rapchieuphim.comment.spec.js",
+          "uuid": "319b06f7-6aae-4a7b-963e-31730488c26e",
+          "title": "Kiểm tra search",
+          "fullFile": "D:\\Rapchieuphim-Selenium-JS\\HoangQuocNam\\rapchieuphim.search.spec.js",
+          "file": "\\HoangQuocNam\\rapchieuphim.search.spec.js",
           "beforeHooks": [
             {
-              "title": "\"before all\" hook in \"Kiểm tra trường nội dung bình luận\"",
-              "fullTitle": "Kiểm tra trường nội dung bình luận \"before all\" hook in \"Kiểm tra trường nội dung bình luận\"",
+              "title": "\"before all\" hook in \"Kiểm tra search\"",
+              "fullTitle": "Kiểm tra search \"before all\" hook in \"Kiểm tra search\"",
               "timedOut": null,
-              "duration": 5226,
+              "duration": 3804,
               "state": null,
               "speed": null,
               "pass": false,
@@ -45,7 +45,7 @@
               "context": null,
               "code": "driver = await new Builder().forBrowser('MicrosoftEdge').build();",
               "err": {},
-              "uuid": "7b8f4f28-9388-4c28-ac90-b6ec10c63ec4",
+              "uuid": "57ef57a8-8aa0-450a-aa71-7240573d054e",
               "parentUUID": null,
               "isHook": true,
               "skipped": false
@@ -53,10 +53,10 @@
           ],
           "afterHooks": [
             {
-              "title": "\"after all\" hook in \"Kiểm tra trường nội dung bình luận\"",
-              "fullTitle": "Kiểm tra trường nội dung bình luận \"after all\" hook in \"Kiểm tra trường nội dung bình luận\"",
+              "title": "\"after all\" hook in \"Kiểm tra search\"",
+              "fullTitle": "Kiểm tra search \"after all\" hook in \"Kiểm tra search\"",
               "timedOut": null,
-              "duration": 617,
+              "duration": 1243,
               "state": null,
               "speed": null,
               "pass": false,
@@ -65,7 +65,7 @@
               "context": null,
               "code": "await driver.quit()",
               "err": {},
-              "uuid": "5bdb70cd-8621-46f5-b253-2fdda913fe27",
+              "uuid": "964c6b0e-3024-4997-918b-68ac826c0736",
               "parentUUID": null,
               "isHook": true,
               "skipped": false
@@ -73,32 +73,36 @@
           ],
           "tests": [
             {
-              "title": "T12 Bình luận - Nội dung bình luận không được để trống",
-              "fullTitle": "Kiểm tra trường nội dung bình luận T12 Bình luận - Nội dung bình luận không được để trống",
+              "title": "Không tìm kiếm ký tự đặc biệt",
+              "fullTitle": "Kiểm tra search Không tìm kiếm ký tự đặc biệt",
               "timedOut": null,
-              "duration": 34919,
-              "state": "passed",
-              "speed": "slow",
-              "pass": true,
-              "fail": false,
+              "duration": 27174,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
               "pending": false,
               "context": null,
-              "code": "fieldMessage(\"\", \"Nội dung bình luận xin đừng để trống\")",
-              "err": {},
-              "uuid": "bc35b10d-5599-4077-892b-f2a632fd5920",
+              "code": "fieldSearch(\"ln!mik\", \"Không tìm được kết quả\")",
+              "err": {
+                "message": "AssertionError: expected 'Tìm kiếm phim, tin tức, nghệ sỹ' to equal 'Không tìm được kết quả'",
+                "estack": "AssertionError: expected 'Tìm kiếm phim, tin tức, nghệ sỹ' to equal 'Không tìm được kết quả'\n    at fieldSearch (HoangQuocNam\\rapchieuphim.search.spec.js:19:15)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)",
+                "diff": "- Tìm kiếm phim, tin tức, nghệ sỹ\n+ Không tìm được kết quả\n"
+              },
+              "uuid": "e9a4596b-3a40-4694-beb2-b35c67cf47e9",
               "parentUUID": null,
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
-          "passes": [
-            "bc35b10d-5599-4077-892b-f2a632fd5920"
+          "passes": [],
+          "failures": [
+            "e9a4596b-3a40-4694-beb2-b35c67cf47e9"
           ],
-          "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 34919,
+          "duration": 27174,
           "root": false,
           "rootEmpty": false,
           "_timeout": null

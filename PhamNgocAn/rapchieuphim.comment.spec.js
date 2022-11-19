@@ -30,7 +30,7 @@ async function fieldMessage(testcase, expect) {
 
 describe('Kiểm tra trường nội dung bình luận', async function () {
   before(async function() {
-    driver = await new Builder().forBrowser('MicrosoftEdge').build();
+    driver = await new Builder().forBrowser('chrome').build();
   });
   after(async () => await driver.quit());
 

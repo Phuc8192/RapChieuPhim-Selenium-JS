@@ -57,8 +57,8 @@ async function checkAlertUserphone(testcase, expect) {
 describe('Kiểm tra trường số điện thoại', async function () {
 
   before(async function() {
-    driver = await new Builder().forBrowser('MicrosoftEdge').build();
-});
+    driver = await new Builder().forBrowser('chrome').build();
+  });
   after(async () => await driver.quit());
   it('T6 Số điện thoại - Không được nhập chữ cái', async () => fieldUserPhone("0a9s8d7f9g12345", "0987912345"));
   it('T7 Số điện thoại - Không được nhập ký tự đặc biệt', async () => fieldUserPhone("@0909090909", "0909090909"));
